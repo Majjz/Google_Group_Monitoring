@@ -1,9 +1,15 @@
 function AuditGroups() {
-  const AUTOREMEDIATE_JOIN = false;
-  const AUTOREMEDIATE_VIEW = false;
+
+  // Slack Alerting activation, using a Slack App
   const SLACK_ALERTING = true;
   const SLACK_WEBHOOK = '';
+
+  // Required - Your domain (example.com)
   const DOMAIN = '';
+
+  // Auto Remediation Mode, to automatically fix issues
+  const AUTOREMEDIATE_JOIN = false;
+  const AUTOREMEDIATE_VIEW = false;
 
   var groups = listAllGroups(DOMAIN);
   var message = "";
