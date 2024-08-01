@@ -13,6 +13,15 @@ Insecure Google Workspace Groups can lead to exposed sensitive data in emails, a
     Auto-remediation: Optionally fixes insecure settings.
     Slack Notifications: Sends alerts to a Slack channel when issues are found.
 
+The Application detects:
+- Groups where anyone can read emails
+- Groups where anyone in the domain can join
+- Groups where anyone, even external users, can join
+
+The autoremediation mode changes the insecure settings to:
+- Only users in the group can read emails
+- All users in the domain can ask to join the group
+
 ## Configuration
 
 Before running the script, configure the following constants:
@@ -20,7 +29,7 @@ Before running the script, configure the following constants:
     AUTOREMEDIATE_JOIN (boolean): Set to true to automatically remediate groups that allow all domain users to join.
     AUTOREMEDIATE_VIEW (boolean): Set to true to automatically remediate groups that are visible to all domain users or the public.
     SLACK_ALERTING (boolean): Set to true to enable Slack notifications.
-    SLACK_WEBHOOK (string): The webhook URL for your Slack channel.
+    SLACK_WEBHOOK (string): The webhook URL for your Slack APP.
     DOMAIN (string): The domain name of your Google Workspace.
 
 ## Installation
